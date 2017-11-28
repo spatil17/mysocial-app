@@ -15,12 +15,12 @@ mongoose.connect(config.uri, (err) => {
   }
 });
 
-app.use(express.static(__dirname + '/client/dist/'));
+app.use(express.static(__dirname + '/public/'));
 
 //no matter what they use - it will go to home screen when they enter the path
 app.get('*', (req, res) => {
   //res.send('hello world');
-  res.sendFile(path.join(__dirname + '/client/dist/index.html'));
+  res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
 app.listen(8080,()=> {
