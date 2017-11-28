@@ -8,7 +8,7 @@ const port = process.env.PORT || 8080;
 //import code from database config
 
 mongoose.Promise = global.Promise;
-mongoose.connect(config.uri, (err) => {
+mongoose.connect(config.uri, { useMongoClient: true }, (err) => {
   if(err){
     console.log('Could not connect to the database : ', err);
   } else {
