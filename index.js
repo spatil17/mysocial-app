@@ -16,7 +16,7 @@ mongoose.connect(config.uri, (err) => {
   }
 });
 
-app.use(express.static(__dirname + '/public/'));
+app.use(express.static(__dirname + '/public'));
 
 //no matter what they use - it will go to home screen when they enter the path
 app.get('*', (req, res) => {
