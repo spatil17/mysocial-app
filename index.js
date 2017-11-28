@@ -4,6 +4,7 @@ const app = express();
 const mongoose = require('mongoose');
 const config = require('./config/database');
 const path = require('path');
+const port = process.env.PORT || 8080;
 //import code from database config
 
 mongoose.Promise = global.Promise;
@@ -23,6 +24,6 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
-app.listen(8080,()=> {
-  console.log('listening to port 8080');
+app.listen(port,()=> {
+  console.log('listening to port' +port);
 });
